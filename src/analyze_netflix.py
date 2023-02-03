@@ -8,8 +8,8 @@ from matplotlib.colors import LinearSegmentedColormap, to_hex
 
 
 class NetflixAnalyzer:
-    def __init__(self, path_to_data, export_folder):
-        self.path_to_data = path_to_data
+    def __init__(self, data_folder, export_folder):
+        self.path_to_data = self.search_for_data_file(data_folder)
         self.export_folder = export_folder
         self.data = self.get_data()
 
@@ -19,6 +19,15 @@ class NetflixAnalyzer:
         self.color_palette_years = None
         self.color_palette_weekdays = None
         self.color_palette_time = None
+
+    def search_for_data_file(self, data_folder):
+        for root, _, files in os.walk(data_folder):
+            for file in files:
+                if file == "ViewingActivity.csv":
+                    return os.path.join(root, file)
+        raise FileNotFoundError(
+            f"ViewingActivity.csv not found in the directory tree starting from {data_folder}"
+        )
 
     def get_data(self):
         return pd.read_csv(self.path_to_data)
@@ -392,9 +401,9 @@ class NetflixAnalyzer:
 
 
 def main():
-    path_to_data = "data/raw/CONTENT_INTERACTION/ViewingActivity.csv"
+    data_folder = "data"
     export_folder = "results"
-    na = NetflixAnalyzer(path_to_data=path_to_data, export_folder=export_folder)
+    na = NetflixAnalyzer(data_folder=data_folder, export_folder=export_folder)
     na.analyze()
 
 
