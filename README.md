@@ -4,18 +4,12 @@ Analyze your *own* Netflix data and find out who in your family spends the most 
 For example, compare who has spent the most hours on Netflix or how the average hours per year differ.
 In addition, many evaluations are carried out at the profile level, such as the monthly hours spent on Netflix over the years and much, much more.
 
-<div style="display:flex; flex-direction:row;">
-  <div style="flex:1;">
-    <img src="./examples/total_watched_hours_EXAMPLE.png" width="100%">
-  </div>
-  <div style="flex:1;">
-    <img src="./examples/mean_watched_hours_per_year_EXAMPLE.png" width="100%">
-  </div>
-</div>
+<p float="left">
+  <img src="./examples/total_watched_hours_EXAMPLE.png" width="45%" />
+  <img src="./examples/mean_watched_hours_per_year_EXAMPLE.png" width="45%" />
+</p>
 
-<div style="text-align:center;">
-    <img src="./examples/watched_hours_over_years_and_months_Olivia_EXAMPLE.png" width="100%">
-</div>
+<img src="./examples/watched_hours_over_years_and_months_Olivia_EXAMPLE.png" width="100%" />
 
 ## Get your own data
 
