@@ -1,6 +1,5 @@
 # Project specific folders
 results/
-data/
 notebooks/
 
 # Byte-compiled / optimized / DLL files
